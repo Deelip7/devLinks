@@ -7,6 +7,7 @@ import store from './store';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // The <Provider /> makes the Redux store available to any nested components.
   <Provider store={store}>
     <App />
   </Provider>,

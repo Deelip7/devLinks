@@ -1,0 +1,3 @@
+export const LINK_ADD_REQUEST = 'LINK_ADD_REQUEST';
+export const LINK_ADD_SUCCESS = 'LINK_ADD_SUCCESS';
+export const LINK_ADD_FAIL = 'LINK_ADD_FAIL';
