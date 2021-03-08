@@ -7,7 +7,7 @@ export const addLink = (link) => async (dispatch, getState) => {
       type: LINK_ADD_REQUEST,
     });
 
-    const { data } = await axios.post(`/api/link`, link);
+    const { data } = await axios.post('/api/link', { link });
 
     dispatch({
       type: LINK_ADD_SUCCESS,

@@ -13,8 +13,12 @@
   "author": "Theelipan Prabakar",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
-    "express-async-handler": "^1.1.4"
+    "express-async-handler": "^1.1.4",
+    "got": "^11.8.2",
+    "metascraper": "^5.18.12",
+    "metascraper-image": "^5.18.12"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
