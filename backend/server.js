@@ -7,6 +7,6 @@ app.use(express.json());
 
 app.use('/api/link', linkRoutes);
 
-app.listen(5000, () => {
-  console.log(`Server run on port 5000`);
+app.listen(4000, () => {
+  console.log(`Server run on port 4000`);
 });

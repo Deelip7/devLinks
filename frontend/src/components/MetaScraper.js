@@ -14,7 +14,7 @@ const MetaScraper = () => {
   return (
     <div className='w-5/6 '>
       <form onSubmit={(e) => submitHandler(e)}>
-        <input type='text' className='w-1/2 border-2' onChange={(e) => setLinkURL(e.target.value)} />
+        <input className='w-1/2 border-2' onChange={(e) => setLinkURL(e.target.value)} name='url' id='url' placeholder='https://example.com' size='30' required />
         <button className='w-32 border-2' type='submit'>
           Add
         </button>
