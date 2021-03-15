@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "metascraper": "^5.18.12",
@@ -21,7 +22,8 @@
     "metascraper-image": "^5.18.12",
     "metascraper-logo": "^5.20.0",
     "metascraper-logo-favicon": "^5.20.0",
-    "metascraper-title": "^5.20.0"
+    "metascraper-title": "^5.20.0",
+    "mongoose": "^5.12.0"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
