@@ -2,13 +2,10 @@ import React from 'react';
 
 const Spinner = () => {
   return (
-    <div className='sk-chase'>
-      <div className='sk-chase-dot'></div>
-      <div className='sk-chase-dot'></div>
-      <div className='sk-chase-dot'></div>
-      <div className='sk-chase-dot'></div>
-      <div className='sk-chase-dot'></div>
-      <div className='sk-chase-dot'></div>
+    <div class='spinner'>
+      <div class='bounce1'></div>
+      <div class='bounce2'></div>
+      <div class='bounce3'></div>
     </div>
   );
 };

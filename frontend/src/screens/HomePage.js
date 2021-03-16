@@ -15,11 +15,11 @@ const HomePage = () => {
     dispatch(listLinks());
   }, [dispatch]);
   return (
-    <>
+    <div>
       <MetaScraper />
       {loading && <Spinner />}
       {links && <LinkCard link={links} />}
-    </>
+    </div>
   );
 };
 
