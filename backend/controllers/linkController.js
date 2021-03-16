@@ -6,28 +6,58 @@ import ms_title from 'metascraper-title';
 import ms_logo from 'metascraper-logo';
 import ms_clearbit from 'metascraper-clearbit';
 import ms_favicon from 'metascraper-logo-favicon';
+import Link from '../models/linkModel.js';
+
+// @desc Get all links
+// @route GET /api/link
+// @access Public
+const listLinks = asyncHandler(async (req, res) => {
+  const link = await Link.find({});
+  if (link) {
+    res.json(link);
+  } else {
+    res.status(400);
+    throw new Error('Links not found');
+  }
+});
 
 // @desc Create a link
 // @route POST /api/link
-// @acess Private/Admin
+// @access Private/Admin
 const createLink = asyncHandler(async (req, res) => {
   const metascraper = metascraper0([ms_image(), ms_title(), ms_logo(), ms_clearbit(), ms_favicon()]);
   const { link } = req.body;
 
-  const regex = new RegExp('^(http|https)://');
-  const urLink = link.match(regex) ? link : `https://${link}`;
+  const regex = new RegExp('^(http|https)://www.');
+  const urlLink = link.match(regex) ? link : 'no';
 
+  console.log(urlLink);
   try {
     const {
       data: html,
       config: { url },
-    } = await axios(urLink);
+    } = await axios(urlLink);
     const metadata = await metascraper({ html, url });
-    res.send(metadata);
+    const { image, title, logo } = metadata;
+
+    const linkExist = await Link.findOne({ url });
+    if (linkExist) {
+      res.status(400);
+      throw new Error('Link already Exists');
+    }
+    const link = new Link({
+      title,
+      url,
+      logo,
+      image,
+    });
+
+    const createLink = await link.save();
+    res.status(200).json(createLink);
   } catch (error) {
     res.status(400);
-    throw new Error('Invaild url');
+    throw new Error(error);
   }
 });
 
-export { createLink };
+export { listLinks, createLink };

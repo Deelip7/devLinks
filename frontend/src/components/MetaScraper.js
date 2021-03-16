@@ -8,7 +8,15 @@ const MetaScraper = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(addLink(linkURL));
+
+    const regex = new RegExp('^(http|https)://');
+
+    if (linkURL.match(regex)) {
+      dispatch(addLink(linkURL));
+    } else {
+      const formatURL = `.${linkURL}`.split('.').slice(1).join('.');
+      dispatch(addLink(formatURL));
+    }
   };
 
   return (
