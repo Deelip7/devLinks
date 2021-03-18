@@ -5,7 +5,7 @@ const LinkCard = ({ link }) => {
     <div className='flex flex-col '>
       {link.map((l) => {
         return (
-          <div key={l._id} className='flex flex-row p-4 m-5 shadow-lg rounded-3xl'>
+          <div key={l._id} className='flex flex-row p-4 m-5 shadow-purple rounded-3xl'>
             <div>
               <a href={l.url}>
                 <img class='inline object-cover w-24 h-24 mr-2 p-1 rounded-3xl shadow-inner' src={l.image ? l.image : l.logo} alt={l.title} />
